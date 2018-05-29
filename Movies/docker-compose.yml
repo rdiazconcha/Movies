@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  movies.webservices:
+    image: ${DOCKER_REGISTRY}movieswebservices
+    build:
+      context: .\Movies.WebServices
+      dockerfile: Dockerfile
