@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f48ce54a-d177-4ee5-afbb-f6c3f654cfbc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62343/MoviesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MoviesService.disco" MetadataType="Disco" ID="b460c950-b566-44fe-85d7-4eb17087953b" SourceId="1" SourceUrl="http://localhost:62343/MoviesService.svc?disco" />
+    <MetadataFile FileName="MoviesService.wsdl" MetadataType="Wsdl" ID="6ccfbabf-8e47-41a1-b73b-9a1def6ffcf6" SourceId="1" SourceUrl="http://localhost:62343/MoviesService.svc?wsdl" />
+    <MetadataFile FileName="MoviesService2.xsd" MetadataType="Schema" ID="46990433-d201-4fd2-a277-8e3c27f24151" SourceId="1" SourceUrl="http://localhost:62343/MoviesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MoviesService.xsd" MetadataType="Schema" ID="ee3670ee-8a45-4a8f-a068-5453ab732ddd" SourceId="1" SourceUrl="http://localhost:62343/MoviesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MoviesService1.xsd" MetadataType="Schema" ID="1d2a2a03-c02c-476d-a3e3-249dc44f91c0" SourceId="1" SourceUrl="http://localhost:62343/MoviesService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
