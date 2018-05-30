@@ -1,138 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MoviesService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:62343/MoviesService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:62343/MoviesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:62343/MoviesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models" />
-    </xsd:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllMovies">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMoviesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMoviesResult" type="tns:ArrayOfMovie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMovie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Movie" nillable="true" type="tns:Movie" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movie">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="tns:Country" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cast" type="tns:ArrayOfPersonRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPersonRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonRole" nillable="true" type="tns:PersonRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonRole">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PersonId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMovieResult" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="movie" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertMovieResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="movie" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMovieResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMovieResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
   </wsdl:types>
-  <wsdl:message name="IMoviesService_GetAllMovies_InputMessage">
+  <wsdl:message name="GetAllMoviesSoapIn">
     <wsdl:part name="parameters" element="tns:GetAllMovies" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllMovies_OutputMessage">
+  <wsdl:message name="GetAllMoviesSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_GetMovie_InputMessage">
+  <wsdl:message name="GetMovieSoapIn">
     <wsdl:part name="parameters" element="tns:GetMovie" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_GetMovie_OutputMessage">
+  <wsdl:message name="GetMovieSoapOut">
     <wsdl:part name="parameters" element="tns:GetMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_InsertMovie_InputMessage">
+  <wsdl:message name="InsertMovieSoapIn">
     <wsdl:part name="parameters" element="tns:InsertMovie" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_InsertMovie_OutputMessage">
+  <wsdl:message name="InsertMovieSoapOut">
     <wsdl:part name="parameters" element="tns:InsertMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_UpdateMovie_InputMessage">
+  <wsdl:message name="UpdateMovieSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateMovie" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_UpdateMovie_OutputMessage">
+  <wsdl:message name="UpdateMovieSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_DeleteMovie_InputMessage">
+  <wsdl:message name="DeleteMovieSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteMovie" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_DeleteMovie_OutputMessage">
+  <wsdl:message name="DeleteMovieSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteMovieResponse" />
   </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllCountries_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCountries" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllCountries_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCountriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetCountry_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCountry" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetCountry_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCountryResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllRoles_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllRoles" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllRoles_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetRole_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRole" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetRole_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRoleResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllPeople_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllPeople" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetAllPeople_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllPeopleResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetPerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPerson" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_GetPerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_InsertPerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertPerson" />
-  </wsdl:message>
-  <wsdl:message name="IMoviesService_InsertPerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertPersonResponse" />
-  </wsdl:message>
-  <wsdl:portType name="IMoviesService">
+  <wsdl:portType name="MoviesServiceSoap">
     <wsdl:operation name="GetAllMovies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetAllMovies" message="tns:IMoviesService_GetAllMovies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetAllMoviesResponse" message="tns:IMoviesService_GetAllMovies_OutputMessage" />
+      <wsdl:input message="tns:GetAllMoviesSoapIn" />
+      <wsdl:output message="tns:GetAllMoviesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetMovie" message="tns:IMoviesService_GetMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetMovieResponse" message="tns:IMoviesService_GetMovie_OutputMessage" />
+      <wsdl:input message="tns:GetMovieSoapIn" />
+      <wsdl:output message="tns:GetMovieSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/InsertMovie" message="tns:IMoviesService_InsertMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/InsertMovieResponse" message="tns:IMoviesService_InsertMovie_OutputMessage" />
+      <wsdl:input message="tns:InsertMovieSoapIn" />
+      <wsdl:output message="tns:InsertMovieSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/UpdateMovie" message="tns:IMoviesService_UpdateMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/UpdateMovieResponse" message="tns:IMoviesService_UpdateMovie_OutputMessage" />
+      <wsdl:input message="tns:UpdateMovieSoapIn" />
+      <wsdl:output message="tns:UpdateMovieSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteMovie">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/DeleteMovie" message="tns:IMoviesService_DeleteMovie_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/DeleteMovieResponse" message="tns:IMoviesService_DeleteMovie_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllCountries">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetAllCountries" message="tns:IMoviesService_GetAllCountries_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetAllCountriesResponse" message="tns:IMoviesService_GetAllCountries_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCountry">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetCountry" message="tns:IMoviesService_GetCountry_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetCountryResponse" message="tns:IMoviesService_GetCountry_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllRoles">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetAllRoles" message="tns:IMoviesService_GetAllRoles_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetAllRolesResponse" message="tns:IMoviesService_GetAllRoles_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRole">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetRole" message="tns:IMoviesService_GetRole_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetRoleResponse" message="tns:IMoviesService_GetRole_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllPeople">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetAllPeople" message="tns:IMoviesService_GetAllPeople_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetAllPeopleResponse" message="tns:IMoviesService_GetAllPeople_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetPerson" message="tns:IMoviesService_GetPerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetPersonResponse" message="tns:IMoviesService_GetPerson_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertPerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/InsertPerson" message="tns:IMoviesService_InsertPerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/InsertPersonResponse" message="tns:IMoviesService_InsertPerson_OutputMessage" />
+      <wsdl:input message="tns:DeleteMovieSoapIn" />
+      <wsdl:output message="tns:DeleteMovieSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IMoviesService" type="tns:IMoviesService">
+  <wsdl:binding name="MoviesServiceSoap" type="tns:MoviesServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllMovies">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetAllMovies" style="document" />
+      <soap:operation soapAction="http://tempuri.org/GetAllMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -141,7 +167,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetMovie">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetMovie" style="document" />
+      <soap:operation soapAction="http://tempuri.org/GetMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -150,7 +176,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="InsertMovie">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/InsertMovie" style="document" />
+      <soap:operation soapAction="http://tempuri.org/InsertMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -159,7 +185,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateMovie">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/UpdateMovie" style="document" />
+      <soap:operation soapAction="http://tempuri.org/UpdateMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -168,70 +194,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteMovie">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/DeleteMovie" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllCountries">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetAllCountries" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCountry">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetCountry" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllRoles">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetAllRoles" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRole">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetRole" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllPeople">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetAllPeople" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPerson">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetPerson" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertPerson">
-      <soap:operation soapAction="http://tempuri.org/IMoviesService/InsertPerson" style="document" />
+      <soap:operation soapAction="http://tempuri.org/DeleteMovie" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -240,9 +203,60 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="MoviesServiceSoap12" type="tns:MoviesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMovies">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMovies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <soap12:operation soapAction="http://tempuri.org/GetMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMovie">
+      <soap12:operation soapAction="http://tempuri.org/InsertMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="MoviesService">
-    <wsdl:port name="BasicHttpBinding_IMoviesService" binding="tns:BasicHttpBinding_IMoviesService">
-      <soap:address location="http://localhost:62343/MoviesService.svc" />
+    <wsdl:port name="MoviesServiceSoap" binding="tns:MoviesServiceSoap">
+      <soap:address location="http://localhost:55080/MoviesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MoviesServiceSoap12" binding="tns:MoviesServiceSoap12">
+      <soap12:address location="http://localhost:55080/MoviesService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

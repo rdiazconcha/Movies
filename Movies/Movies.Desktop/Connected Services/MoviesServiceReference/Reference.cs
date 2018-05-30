@@ -15,30 +15,27 @@ namespace Movies.Desktop.MoviesServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Movie", Namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Movie", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Movie : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.PersonRole> CastField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Movies.Desktop.MoviesServiceReference.Country CountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CountryIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int YearField;
+        
+        private int CountryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Movies.Desktop.MoviesServiceReference.Country CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.PersonRole> CastField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -50,46 +47,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.PersonRole> Cast {
-            get {
-                return this.CastField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CastField, value) != true)) {
-                    this.CastField = value;
-                    this.RaisePropertyChanged("Cast");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Movies.Desktop.MoviesServiceReference.Country Country {
-            get {
-                return this.CountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
-                    this.CountryField = value;
-                    this.RaisePropertyChanged("Country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CountryId {
-            get {
-                return this.CountryIdField;
-            }
-            set {
-                if ((this.CountryIdField.Equals(value) != true)) {
-                    this.CountryIdField = value;
-                    this.RaisePropertyChanged("CountryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
                 return this.IdField;
@@ -102,7 +60,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string Name {
             get {
                 return this.NameField;
@@ -115,7 +73,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Year {
             get {
                 return this.YearField;
@@ -128,6 +86,45 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountryId {
+            get {
+                return this.CountryIdField;
+            }
+            set {
+                if ((this.CountryIdField.Equals(value) != true)) {
+                    this.CountryIdField = value;
+                    this.RaisePropertyChanged("CountryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public Movies.Desktop.MoviesServiceReference.Country Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.PersonRole> Cast {
+            get {
+                return this.CastField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CastField, value) != true)) {
+                    this.CastField = value;
+                    this.RaisePropertyChanged("Cast");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -140,14 +137,13 @@ namespace Movies.Desktop.MoviesServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Country", Namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Country", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Country : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -163,7 +159,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
                 return this.IdField;
@@ -176,7 +172,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string Name {
             get {
                 return this.NameField;
@@ -201,17 +197,15 @@ namespace Movies.Desktop.MoviesServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PersonRole", Namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PersonRole", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class PersonRole : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PersonIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RoleIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -224,7 +218,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int PersonId {
             get {
                 return this.PersonIdField;
@@ -237,7 +231,7 @@ namespace Movies.Desktop.MoviesServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int RoleId {
             get {
                 return this.RoleIdField;
@@ -260,262 +254,439 @@ namespace Movies.Desktop.MoviesServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Role", Namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models")]
-    [System.SerializableAttribute()]
-    public partial class Role : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/Movies.WebServices.Models")]
-    [System.SerializableAttribute()]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FullName {
-            get {
-                return this.FullNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullNameField, value) != true)) {
-                    this.FullNameField = value;
-                    this.RaisePropertyChanged("FullName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MoviesServiceReference.IMoviesService")]
-    public interface IMoviesService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MoviesServiceReference.MoviesServiceSoap")]
+    public interface MoviesServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllMovies", ReplyAction="http://tempuri.org/IMoviesService/GetAllMoviesResponse")]
-        System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie> GetAllMovies();
+        // CODEGEN: Generating message contract since element name GetAllMoviesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllMovies", ReplyAction="*")]
+        Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse GetAllMovies(Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllMovies", ReplyAction="http://tempuri.org/IMoviesService/GetAllMoviesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie>> GetAllMoviesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllMovies", ReplyAction="*")]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse> GetAllMoviesAsync(Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetMovie", ReplyAction="http://tempuri.org/IMoviesService/GetMovieResponse")]
-        Movies.Desktop.MoviesServiceReference.Movie GetMovie(int id);
+        // CODEGEN: Generating message contract since element name GetMovieResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMovie", ReplyAction="*")]
+        Movies.Desktop.MoviesServiceReference.GetMovieResponse GetMovie(Movies.Desktop.MoviesServiceReference.GetMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetMovie", ReplyAction="http://tempuri.org/IMoviesService/GetMovieResponse")]
-        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Movie> GetMovieAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetMovieResponse> GetMovieAsync(Movies.Desktop.MoviesServiceReference.GetMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/InsertMovie", ReplyAction="http://tempuri.org/IMoviesService/InsertMovieResponse")]
-        bool InsertMovie(Movies.Desktop.MoviesServiceReference.Movie movie);
+        // CODEGEN: Generating message contract since element name movie from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertMovie", ReplyAction="*")]
+        Movies.Desktop.MoviesServiceReference.InsertMovieResponse InsertMovie(Movies.Desktop.MoviesServiceReference.InsertMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/InsertMovie", ReplyAction="http://tempuri.org/IMoviesService/InsertMovieResponse")]
-        System.Threading.Tasks.Task<bool> InsertMovieAsync(Movies.Desktop.MoviesServiceReference.Movie movie);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.InsertMovieResponse> InsertMovieAsync(Movies.Desktop.MoviesServiceReference.InsertMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/UpdateMovie", ReplyAction="http://tempuri.org/IMoviesService/UpdateMovieResponse")]
-        bool UpdateMovie(int id, Movies.Desktop.MoviesServiceReference.Movie movie);
+        // CODEGEN: Generating message contract since element name movie from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateMovie", ReplyAction="*")]
+        Movies.Desktop.MoviesServiceReference.UpdateMovieResponse UpdateMovie(Movies.Desktop.MoviesServiceReference.UpdateMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/UpdateMovie", ReplyAction="http://tempuri.org/IMoviesService/UpdateMovieResponse")]
-        System.Threading.Tasks.Task<bool> UpdateMovieAsync(int id, Movies.Desktop.MoviesServiceReference.Movie movie);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.UpdateMovieResponse> UpdateMovieAsync(Movies.Desktop.MoviesServiceReference.UpdateMovieRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/DeleteMovie", ReplyAction="http://tempuri.org/IMoviesService/DeleteMovieResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteMovie", ReplyAction="*")]
         bool DeleteMovie(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/DeleteMovie", ReplyAction="http://tempuri.org/IMoviesService/DeleteMovieResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteMovie", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> DeleteMovieAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllCountries", ReplyAction="http://tempuri.org/IMoviesService/GetAllCountriesResponse")]
-        System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Country> GetAllCountries();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllCountries", ReplyAction="http://tempuri.org/IMoviesService/GetAllCountriesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Country>> GetAllCountriesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetCountry", ReplyAction="http://tempuri.org/IMoviesService/GetCountryResponse")]
-        Movies.Desktop.MoviesServiceReference.Country GetCountry(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetCountry", ReplyAction="http://tempuri.org/IMoviesService/GetCountryResponse")]
-        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Country> GetCountryAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllRoles", ReplyAction="http://tempuri.org/IMoviesService/GetAllRolesResponse")]
-        System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Role> GetAllRoles();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllRoles", ReplyAction="http://tempuri.org/IMoviesService/GetAllRolesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Role>> GetAllRolesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetRole", ReplyAction="http://tempuri.org/IMoviesService/GetRoleResponse")]
-        Movies.Desktop.MoviesServiceReference.Role GetRole(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetRole", ReplyAction="http://tempuri.org/IMoviesService/GetRoleResponse")]
-        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Role> GetRoleAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllPeople", ReplyAction="http://tempuri.org/IMoviesService/GetAllPeopleResponse")]
-        System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Person> GetAllPeople();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetAllPeople", ReplyAction="http://tempuri.org/IMoviesService/GetAllPeopleResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Person>> GetAllPeopleAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetPerson", ReplyAction="http://tempuri.org/IMoviesService/GetPersonResponse")]
-        Movies.Desktop.MoviesServiceReference.Person GetPerson(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/GetPerson", ReplyAction="http://tempuri.org/IMoviesService/GetPersonResponse")]
-        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Person> GetPersonAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/InsertPerson", ReplyAction="http://tempuri.org/IMoviesService/InsertPersonResponse")]
-        bool InsertPerson(Movies.Desktop.MoviesServiceReference.Person person);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMoviesService/InsertPerson", ReplyAction="http://tempuri.org/IMoviesService/InsertPersonResponse")]
-        System.Threading.Tasks.Task<bool> InsertPersonAsync(Movies.Desktop.MoviesServiceReference.Person person);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMoviesServiceChannel : Movies.Desktop.MoviesServiceReference.IMoviesService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MoviesServiceClient : System.ServiceModel.ClientBase<Movies.Desktop.MoviesServiceReference.IMoviesService>, Movies.Desktop.MoviesServiceReference.IMoviesService {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllMoviesRequest {
         
-        public MoviesServiceClient() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllMovies", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.GetAllMoviesRequestBody Body;
+        
+        public GetAllMoviesRequest() {
         }
         
-        public MoviesServiceClient(string endpointConfigurationName) : 
+        public GetAllMoviesRequest(Movies.Desktop.MoviesServiceReference.GetAllMoviesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllMoviesRequestBody {
+        
+        public GetAllMoviesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllMoviesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllMoviesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.GetAllMoviesResponseBody Body;
+        
+        public GetAllMoviesResponse() {
+        }
+        
+        public GetAllMoviesResponse(Movies.Desktop.MoviesServiceReference.GetAllMoviesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllMoviesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie> GetAllMoviesResult;
+        
+        public GetAllMoviesResponseBody() {
+        }
+        
+        public GetAllMoviesResponseBody(System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie> GetAllMoviesResult) {
+            this.GetAllMoviesResult = GetAllMoviesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMovie", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.GetMovieRequestBody Body;
+        
+        public GetMovieRequest() {
+        }
+        
+        public GetMovieRequest(Movies.Desktop.MoviesServiceReference.GetMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetMovieRequestBody() {
+        }
+        
+        public GetMovieRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.GetMovieResponseBody Body;
+        
+        public GetMovieResponse() {
+        }
+        
+        public GetMovieResponse(Movies.Desktop.MoviesServiceReference.GetMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetMovieResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Movies.Desktop.MoviesServiceReference.Movie GetMovieResult;
+        
+        public GetMovieResponseBody() {
+        }
+        
+        public GetMovieResponseBody(Movies.Desktop.MoviesServiceReference.Movie GetMovieResult) {
+            this.GetMovieResult = GetMovieResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertMovie", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.InsertMovieRequestBody Body;
+        
+        public InsertMovieRequest() {
+        }
+        
+        public InsertMovieRequest(Movies.Desktop.MoviesServiceReference.InsertMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Movies.Desktop.MoviesServiceReference.Movie movie;
+        
+        public InsertMovieRequestBody() {
+        }
+        
+        public InsertMovieRequestBody(Movies.Desktop.MoviesServiceReference.Movie movie) {
+            this.movie = movie;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.InsertMovieResponseBody Body;
+        
+        public InsertMovieResponse() {
+        }
+        
+        public InsertMovieResponse(Movies.Desktop.MoviesServiceReference.InsertMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertMovieResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool InsertMovieResult;
+        
+        public InsertMovieResponseBody() {
+        }
+        
+        public InsertMovieResponseBody(bool InsertMovieResult) {
+            this.InsertMovieResult = InsertMovieResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateMovie", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.UpdateMovieRequestBody Body;
+        
+        public UpdateMovieRequest() {
+        }
+        
+        public UpdateMovieRequest(Movies.Desktop.MoviesServiceReference.UpdateMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public Movies.Desktop.MoviesServiceReference.Movie movie;
+        
+        public UpdateMovieRequestBody() {
+        }
+        
+        public UpdateMovieRequestBody(int id, Movies.Desktop.MoviesServiceReference.Movie movie) {
+            this.id = id;
+            this.movie = movie;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Movies.Desktop.MoviesServiceReference.UpdateMovieResponseBody Body;
+        
+        public UpdateMovieResponse() {
+        }
+        
+        public UpdateMovieResponse(Movies.Desktop.MoviesServiceReference.UpdateMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateMovieResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool UpdateMovieResult;
+        
+        public UpdateMovieResponseBody() {
+        }
+        
+        public UpdateMovieResponseBody(bool UpdateMovieResult) {
+            this.UpdateMovieResult = UpdateMovieResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface MoviesServiceSoapChannel : Movies.Desktop.MoviesServiceReference.MoviesServiceSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MoviesServiceSoapClient : System.ServiceModel.ClientBase<Movies.Desktop.MoviesServiceReference.MoviesServiceSoap>, Movies.Desktop.MoviesServiceReference.MoviesServiceSoap {
+        
+        public MoviesServiceSoapClient() {
+        }
+        
+        public MoviesServiceSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public MoviesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public MoviesServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MoviesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MoviesServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MoviesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MoviesServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie> GetAllMovies() {
-            return base.Channel.GetAllMovies();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.GetAllMovies(Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest request) {
+            return base.Channel.GetAllMovies(request);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie>> GetAllMoviesAsync() {
-            return base.Channel.GetAllMoviesAsync();
+        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Movie> GetAllMovies() {
+            Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest inValue = new Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.GetAllMoviesRequestBody();
+            Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse retVal = ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).GetAllMovies(inValue);
+            return retVal.Body.GetAllMoviesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse> Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.GetAllMoviesAsync(Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest request) {
+            return base.Channel.GetAllMoviesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse> GetAllMoviesAsync() {
+            Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest inValue = new Movies.Desktop.MoviesServiceReference.GetAllMoviesRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.GetAllMoviesRequestBody();
+            return ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).GetAllMoviesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Movies.Desktop.MoviesServiceReference.GetMovieResponse Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.GetMovie(Movies.Desktop.MoviesServiceReference.GetMovieRequest request) {
+            return base.Channel.GetMovie(request);
         }
         
         public Movies.Desktop.MoviesServiceReference.Movie GetMovie(int id) {
-            return base.Channel.GetMovie(id);
+            Movies.Desktop.MoviesServiceReference.GetMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.GetMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.GetMovieRequestBody();
+            inValue.Body.id = id;
+            Movies.Desktop.MoviesServiceReference.GetMovieResponse retVal = ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).GetMovie(inValue);
+            return retVal.Body.GetMovieResult;
         }
         
-        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Movie> GetMovieAsync(int id) {
-            return base.Channel.GetMovieAsync(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetMovieResponse> Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.GetMovieAsync(Movies.Desktop.MoviesServiceReference.GetMovieRequest request) {
+            return base.Channel.GetMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.GetMovieResponse> GetMovieAsync(int id) {
+            Movies.Desktop.MoviesServiceReference.GetMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.GetMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.GetMovieRequestBody();
+            inValue.Body.id = id;
+            return ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).GetMovieAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Movies.Desktop.MoviesServiceReference.InsertMovieResponse Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.InsertMovie(Movies.Desktop.MoviesServiceReference.InsertMovieRequest request) {
+            return base.Channel.InsertMovie(request);
         }
         
         public bool InsertMovie(Movies.Desktop.MoviesServiceReference.Movie movie) {
-            return base.Channel.InsertMovie(movie);
+            Movies.Desktop.MoviesServiceReference.InsertMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.InsertMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.InsertMovieRequestBody();
+            inValue.Body.movie = movie;
+            Movies.Desktop.MoviesServiceReference.InsertMovieResponse retVal = ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).InsertMovie(inValue);
+            return retVal.Body.InsertMovieResult;
         }
         
-        public System.Threading.Tasks.Task<bool> InsertMovieAsync(Movies.Desktop.MoviesServiceReference.Movie movie) {
-            return base.Channel.InsertMovieAsync(movie);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.InsertMovieResponse> Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.InsertMovieAsync(Movies.Desktop.MoviesServiceReference.InsertMovieRequest request) {
+            return base.Channel.InsertMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.InsertMovieResponse> InsertMovieAsync(Movies.Desktop.MoviesServiceReference.Movie movie) {
+            Movies.Desktop.MoviesServiceReference.InsertMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.InsertMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.InsertMovieRequestBody();
+            inValue.Body.movie = movie;
+            return ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).InsertMovieAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Movies.Desktop.MoviesServiceReference.UpdateMovieResponse Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.UpdateMovie(Movies.Desktop.MoviesServiceReference.UpdateMovieRequest request) {
+            return base.Channel.UpdateMovie(request);
         }
         
         public bool UpdateMovie(int id, Movies.Desktop.MoviesServiceReference.Movie movie) {
-            return base.Channel.UpdateMovie(id, movie);
+            Movies.Desktop.MoviesServiceReference.UpdateMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.UpdateMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.UpdateMovieRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.movie = movie;
+            Movies.Desktop.MoviesServiceReference.UpdateMovieResponse retVal = ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).UpdateMovie(inValue);
+            return retVal.Body.UpdateMovieResult;
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateMovieAsync(int id, Movies.Desktop.MoviesServiceReference.Movie movie) {
-            return base.Channel.UpdateMovieAsync(id, movie);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.UpdateMovieResponse> Movies.Desktop.MoviesServiceReference.MoviesServiceSoap.UpdateMovieAsync(Movies.Desktop.MoviesServiceReference.UpdateMovieRequest request) {
+            return base.Channel.UpdateMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.UpdateMovieResponse> UpdateMovieAsync(int id, Movies.Desktop.MoviesServiceReference.Movie movie) {
+            Movies.Desktop.MoviesServiceReference.UpdateMovieRequest inValue = new Movies.Desktop.MoviesServiceReference.UpdateMovieRequest();
+            inValue.Body = new Movies.Desktop.MoviesServiceReference.UpdateMovieRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.movie = movie;
+            return ((Movies.Desktop.MoviesServiceReference.MoviesServiceSoap)(this)).UpdateMovieAsync(inValue);
         }
         
         public bool DeleteMovie(int id) {
@@ -524,62 +695,6 @@ namespace Movies.Desktop.MoviesServiceReference {
         
         public System.Threading.Tasks.Task<bool> DeleteMovieAsync(int id) {
             return base.Channel.DeleteMovieAsync(id);
-        }
-        
-        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Country> GetAllCountries() {
-            return base.Channel.GetAllCountries();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Country>> GetAllCountriesAsync() {
-            return base.Channel.GetAllCountriesAsync();
-        }
-        
-        public Movies.Desktop.MoviesServiceReference.Country GetCountry(int id) {
-            return base.Channel.GetCountry(id);
-        }
-        
-        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Country> GetCountryAsync(int id) {
-            return base.Channel.GetCountryAsync(id);
-        }
-        
-        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Role> GetAllRoles() {
-            return base.Channel.GetAllRoles();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Role>> GetAllRolesAsync() {
-            return base.Channel.GetAllRolesAsync();
-        }
-        
-        public Movies.Desktop.MoviesServiceReference.Role GetRole(int id) {
-            return base.Channel.GetRole(id);
-        }
-        
-        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Role> GetRoleAsync(int id) {
-            return base.Channel.GetRoleAsync(id);
-        }
-        
-        public System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Person> GetAllPeople() {
-            return base.Channel.GetAllPeople();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Movies.Desktop.MoviesServiceReference.Person>> GetAllPeopleAsync() {
-            return base.Channel.GetAllPeopleAsync();
-        }
-        
-        public Movies.Desktop.MoviesServiceReference.Person GetPerson(System.Guid id) {
-            return base.Channel.GetPerson(id);
-        }
-        
-        public System.Threading.Tasks.Task<Movies.Desktop.MoviesServiceReference.Person> GetPersonAsync(System.Guid id) {
-            return base.Channel.GetPersonAsync(id);
-        }
-        
-        public bool InsertPerson(Movies.Desktop.MoviesServiceReference.Person person) {
-            return base.Channel.InsertPerson(person);
-        }
-        
-        public System.Threading.Tasks.Task<bool> InsertPersonAsync(Movies.Desktop.MoviesServiceReference.Person person) {
-            return base.Channel.InsertPersonAsync(person);
         }
     }
 }

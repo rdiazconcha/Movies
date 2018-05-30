@@ -47,10 +47,11 @@ namespace Movies.Desktop.ViewModels
 
         public async Task LoadMoviesAsync()
         {
-            var allMovies = await MoviesService.Current.GetAllMoviesAsync();
-            if (allMovies != null && allMovies.Any())
+            var allMovies = await ServiceFactory.MoviesService.GetAllMoviesAsync();
+            
+            if (allMovies.Body.GetAllMoviesResult != null)
             {
-                Movies = new ObservableCollection<Movie>(allMovies.Select(m =>
+                Movies = new ObservableCollection<Movie>(allMovies.Body.GetAllMoviesResult.Select(m =>
                     new Movie() { Id = m.Id, Name = m.Name, CountryId = m.CountryId, Year = m.Year }));
             }
         }

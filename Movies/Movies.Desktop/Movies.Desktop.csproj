@@ -56,12 +56,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MovieEditionWindow.xaml.cs">
+    <Compile Include="Connected Services\CountriesServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MoviesServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PeopleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RolesServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieEditionWindow.xaml.cs">
       <DependentUpon>MovieEditionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MoviesService.cs" />
+    <Compile Include="ServiceFactory.cs" />
     <Compile Include="ViewModels\MovieEditionViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MoviesWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -69,21 +89,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Connected Services\MoviesServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Movie.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PersonRole.cs" />
     <Compile Include="Entities\Role.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\MoviesWindow.xaml.cs">
+      <DependentUpon>MoviesWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MovieEditionWindow.xaml">
+    <Page Include="Views\MovieEditionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,28 +123,55 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.Country.datasource">
+    <None Include="Connected Services\CountriesServiceReference\CountriesService.wsdl" />
+    <None Include="Connected Services\CountriesServiceReference\Movies.Desktop.CountriesServiceReference.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CountriesServiceReference\Movies.Desktop.CountriesServiceReference.GetAllCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CountriesServiceReference\Movies.Desktop.CountriesServiceReference.GetCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.GetAllMoviesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.GetMovieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.InsertMovieResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.Movie.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.Person.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.Role.datasource">
+    <None Include="Connected Services\MoviesServiceReference\Movies.Desktop.MoviesServiceReference.UpdateMovieResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MoviesServiceReference\MoviesService.wsdl" />
-    <None Include="Connected Services\MoviesServiceReference\MoviesService.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\PeopleServiceReference\Movies.Desktop.PeopleServiceReference.GetAllPeopleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MoviesServiceReference\MoviesService1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\PeopleServiceReference\Movies.Desktop.PeopleServiceReference.GetPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MoviesServiceReference\MoviesService2.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\PeopleServiceReference\Movies.Desktop.PeopleServiceReference.InsertPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PeopleServiceReference\Movies.Desktop.PeopleServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeopleServiceReference\PeopleService.wsdl" />
+    <None Include="Connected Services\RolesServiceReference\Movies.Desktop.RolesServiceReference.GetAllRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolesServiceReference\Movies.Desktop.RolesServiceReference.GetRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolesServiceReference\Movies.Desktop.RolesServiceReference.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolesServiceReference\RolesService.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,7 +184,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CountriesServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\MoviesServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\PeopleServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\RolesServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MoviesServiceReference\MoviesService.disco" />
@@ -155,6 +200,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MoviesServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CountriesServiceReference\CountriesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CountriesServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CountriesServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CountriesServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PeopleServiceReference\PeopleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PeopleServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PeopleServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PeopleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RolesServiceReference\RolesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RolesServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RolesServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RolesServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

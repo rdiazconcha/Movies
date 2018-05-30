@@ -120,7 +120,7 @@ namespace Movies.Desktop.ViewModels
 
         private void LoadCountries()
         {
-            var allCountries = MoviesService.Current.GetAllCountries();
+            var allCountries = ServiceFactory.CountriesService.GetAllCountries();
             if (allCountries != null && allCountries.Any())
             {
                 Countries = new ObservableCollection<Country>(allCountries.Select(c =>
@@ -137,7 +137,7 @@ namespace Movies.Desktop.ViewModels
                 movieToSave.Name = Name;
                 movieToSave.CountryId = SelectedCountry.Id;
                 movieToSave.Year = Year.Value;
-                MoviesService.Current.UpdateMovie(Id, movieToSave);
+                ServiceFactory.MoviesService.UpdateMovie(Id, movieToSave);
             }
             catch (Exception ex)
             {

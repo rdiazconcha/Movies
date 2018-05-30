@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>5fc13285-56b5-4404-9bf9-efd4f090af18</ProjectGuid>
-    <DockerLaunchAction>LaunchWCFTestClient</DockerLaunchAction>
-    <DockerServiceUrl>http://{ServiceIPAddress}/MoviesService.svc</DockerServiceUrl>
-    <DockerServiceName>movies.webservices</DockerServiceName>
+    <ProjectGuid>f6288cca-5368-44c7-9bd7-ace2ac483e82</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>http://{ServiceIPAddress}</DockerServiceUrl>
+    <DockerServiceName>movies.soapwebservices</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
