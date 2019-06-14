@@ -134,10 +134,28 @@ namespace Movies.SoapWebServices.Repositories
 
         private void PreloadMovies()
         {
-            var godFather = new Movie() { Id = 1, Name = "The Godfather", CountryId = 1, Country = countries.First() };
+            var godFather = new Movie() { Id = 1, Name = "The Godfather", CountryId = 1, Country = countries.First(), Year = 1972 };
             godFather.Cast = new List<PersonRole>();
             godFather.Cast.Add(new PersonRole() { PersonId = 1, RoleId = 1 });
             movies.Add(godFather);
+
+            movies.Add(new Movie()
+            {
+                Country = countries.First(),
+                Name = "Goodfellas",
+                Id = 2,
+                Year = 1990,
+                Cast = new List<PersonRole>() { new PersonRole() { PersonId = 2, RoleId = 1 } }
+            });
+
+            movies.Add(new Movie()
+            {
+                Country = countries.First(),
+                Name = "Whiplash",
+                Id = 3,
+                Year = 2014,
+                Cast = new List<PersonRole>() { new PersonRole() { PersonId = 3, RoleId = 1 } }
+            });
         }
     }
 }

@@ -133,7 +133,7 @@ namespace Movies.WebServices
 
         private void PreloadMovies()
         {
-            var godFather = new Movie() { Id = 1, Name = "The Godfather", CountryId = 1, Country = countries.First() };
+            var godFather = new Movie() { Id = 1, Name = "The Godfather", CountryId = 1, Country = countries.First(), Year = 1972 };
             godFather.Cast = new List<PersonRole>();
             godFather.Cast.Add(new PersonRole() { PersonId = 1, RoleId = 1 });
             movies.Add(godFather);
